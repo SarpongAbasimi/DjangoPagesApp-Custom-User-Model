@@ -31,8 +31,14 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+
+    #Local
     'users.apps.UsersConfig',
-    'pagesapp.apps.PagesappConfig',
+    'pagesapp.apps.PagesappConfig',   
+    
+     # 3rd Party
+    'crispy_forms',
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -120,6 +126,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 #settings for the custom user model
 AUTH_USER_MODEL='users.CustomUser'

@@ -1,9 +1,16 @@
 {% extends 'base.html' %}
+{% load crispy_forms_tags %}
 
 {% block content %}
-<h1>Login</h1>
-<form method="POST">
-    {{form.as_p}}
-    <button type="submit">Log In</button>
-</form>
+<div class="container">
+        <h1>Login</h1>
+</div>
+
+<div class="container">
+        <form method="POST">
+                {{form |crispy}}
+                <button class='btn btn-success'type="submit">Log In</button>
+        </form>
+</div>
+
 {% endblock content %}
