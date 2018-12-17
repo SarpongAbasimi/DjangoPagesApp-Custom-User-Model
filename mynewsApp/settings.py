@@ -133,8 +133,8 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 AUTH_USER_MODEL='users.CustomUser'
 
 # userLogin and logout Rediret
-LOGIN_REDIRECT_URL = ''
-LOGOUT_REDIRECT_URL =''
+LOGIN_REDIRECT_URL = 'home'
+LOGOUT_REDIRECT_URL ='login'
 
 #Email Reset
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

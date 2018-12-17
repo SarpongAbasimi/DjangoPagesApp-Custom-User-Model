@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import ListView,DetailView,DeleteView,UpdateView
+from django.views.generic import ListView,DetailView,DeleteView,UpdateView,CreateView
 from .models import Articles
 from django.urls import reverse_lazy
 
@@ -23,3 +23,12 @@ class ArticleUpdateView(UpdateView):
     model=Articles
     fields= ('title','content')
     template_name='article_edit.html'
+
+class ArticleCreateView(CreateView):
+    model = Articles
+    template_name = 'article_new.html'
+    fields = ('title', 'content',)
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
